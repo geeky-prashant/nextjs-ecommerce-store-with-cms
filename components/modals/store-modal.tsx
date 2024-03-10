@@ -13,7 +13,7 @@ export const StoreModal = () => {
       isOpen={storeModal.isOpen}
       onClose={() => { storeModal.onClose }}
     >
-      Future Create Store Form
+      Create Store Form
     </Modal>
   )
 }
