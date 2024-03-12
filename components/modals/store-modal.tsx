@@ -19,7 +19,11 @@ export const StoreModal = () => {
     defaultValues: {
       name: "",
     }
-  })
+  });
+
+  const onSubmit = (values: z.infer<typeof formSchema>) => {
+    console.log(values)
+  }
 
   return (
     <Modal
