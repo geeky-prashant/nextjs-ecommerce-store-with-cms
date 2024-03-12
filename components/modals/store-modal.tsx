@@ -20,7 +20,7 @@ import { useStoreModal } from "@/hooks/use-store-modal";
 
 const formSchema = z.object({
   name: z.string().min(1, {
-    "message": "Required"
+    "message": "Name is required"
   }),
 })
 
