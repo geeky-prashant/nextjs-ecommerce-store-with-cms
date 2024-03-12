@@ -1,7 +1,7 @@
 "use client";
 
-import { useStoreModal } from "@/hooks/use-store-modal";
 import { Modal } from "../ui/modal";
+import { useStoreModal } from "@/hooks/use-store-modal";
 
 export const StoreModal = () => {
   const storeModal = useStoreModal();
