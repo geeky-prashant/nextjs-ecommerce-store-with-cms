@@ -1,7 +1,6 @@
 "use client";
 
 import { useEffect } from "react";
-import { UserButton } from "@clerk/nextjs";
 import { useStoreModal } from "@/hooks/use-store-modal";
 
 const SetupPage = () => {
@@ -14,22 +13,7 @@ const SetupPage = () => {
     }
   }, [onOpen, isOpen])
 
-  return (
-    <div className="p-4 flex items-center justify-between">
-      Root Page
-      <UserButton
-        afterSignOutUrl="/"
-        appearance={{
-          elements: {
-            avatarBox: {
-              width: "2.3rem",
-              height: "2.3rem"
-            }
-          }
-        }}
-      />
-    </div>
-  );
+  return null;
 }
 
 export default SetupPage;
