@@ -1,6 +1,12 @@
 import { prismadb } from "@/lib/prismadb"
 
-const DashboardPage = async ({ params }: { params: { storeId: string } }) => {
+interface DashboardPageProps {
+  params: {
+    storeId: string
+  }
+}
+
+const DashboardPage = async ({ params }: DashboardPageProps) => {
 
   const store = await prismadb.store.findFirst({
     where: {

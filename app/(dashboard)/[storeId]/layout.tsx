@@ -3,10 +3,14 @@ import { prismadb } from "@/lib/prismadb";
 import { redirect } from "next/navigation";
 import Navbar from "@/components/navbar";
 
-export default async function DashboardLayout({ children, params }: {
+interface DahboardLayoutProps {
   children: React.ReactNode,
-  params: { storeId: string }
-}) {
+  params: {
+    storeId: string
+  }
+}
+
+export default async function DashboardLayout({ children, params }: DahboardLayoutProps) {
   const { userId } = auth();
 
   if (!userId) {
