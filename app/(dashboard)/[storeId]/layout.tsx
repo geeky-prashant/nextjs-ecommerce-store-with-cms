@@ -16,12 +16,12 @@ export default async function DashboardLayout({ children, params }: {
   const store = await prismadb.store.findFirst({
     where: {
       id: params.storeId,
-      userId
+      userId,
     }
   })
 
   if (!store) {
-    redirect("/")
+    redirect("/");
   }
 
   return (

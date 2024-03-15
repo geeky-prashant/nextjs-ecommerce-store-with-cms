@@ -11,9 +11,9 @@ const SetupPage = () => {
     if (!isOpen) {
       onOpen();
     }
-  }, [onOpen, isOpen])
+  }, [isOpen, onOpen]);
 
   return null;
-}
+};
 
 export default SetupPage;

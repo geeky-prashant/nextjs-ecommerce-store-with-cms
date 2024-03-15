@@ -10,7 +10,9 @@ const DashboardPage = async ({ params }: { params: { storeId: string } }) => {
 
   return (
     <div>
-      Active Store: <span className="text-slate-600 font-bold">{store?.name}</span>
+      <>
+        Active Store: <span className="text-slate-600 font-bold">{store?.name}</span>
+      </>
     </div>
   )
 }
