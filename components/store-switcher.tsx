@@ -93,10 +93,11 @@ export default function StoreSwitcher({ className, items = [] }: StoreSwitcherPr
           <CommandList>
             <CommandGroup>
               <CommandItem
-                onClick={() => {
+                onSelect={() => {
                   setOpen(false)
                   storeModal.onOpen()
                 }}
+                className="cursor-pointer"
               >
                 <PlusCircle className="mr-2 h-5 w-5" />
                 Create Store
