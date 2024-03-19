@@ -1,6 +1,7 @@
 "use client";
 
-import { z } from "zod"
+import { z } from "zod";
+import axios from "axios";
 import { zodResolver } from "@hookform/resolvers/zod"
 import { useForm } from "react-hook-form"
 
@@ -19,6 +20,8 @@ import {
 } from "@/components/ui/form"
 import { Input } from "@/components/ui/input"
 import { useState } from "react";
+import toast from "react-hot-toast";
+import { useParams, useRouter } from "next/navigation";
 
 interface SettingFormProps {
   initialData: Store;
@@ -33,6 +36,9 @@ const formSchema = z.object({
 type SettingsFormValues = z.infer<typeof formSchema>
 
 export const SettingsForm = ({ initialData }: SettingFormProps) => {
+  const params = useParams();
+  const router = useRouter();
+
   const [open, setOpen] = useState(false);
   const [loading, setLoading] = useState(false);
 
@@ -42,7 +48,18 @@ export const SettingsForm = ({ initialData }: SettingFormProps) => {
   });
 
   const onSubmit = async (data: SettingsFormValues) => {
-    console.log(data)
+    try {
+      setLoading(true);
+
+      await axios.patch(`/api/stores/${params.storeId}`, data);
+
+      router.refresh();
+      toast.success("Store updated")
+    } catch (error) {
+      toast.error("Something went wrong");
+    } finally {
+      setLoading(false);
+    }
   }
 
   return (
