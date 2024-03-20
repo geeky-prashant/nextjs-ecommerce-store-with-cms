@@ -10,7 +10,7 @@ const MainNav = ({ className, ...props }: React.HTMLAttributes<HTMLElement>) => 
 
   const routes = [
     {
-      label: 'Dashboard',
+      label: 'Overview',
       href: `/${params.storeId}`,
       active: pathname === `/${params.storeId}`,
     },

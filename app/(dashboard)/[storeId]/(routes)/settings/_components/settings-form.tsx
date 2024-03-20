@@ -23,6 +23,7 @@ import { useState } from "react";
 import toast from "react-hot-toast";
 import { useParams, useRouter } from "next/navigation";
 import { AlertModal } from "@/components/modals/alert-modal";
+import ApiAlert from "@/components/api-alert";
 
 interface SettingFormProps {
   initialData: Store;
@@ -131,6 +132,11 @@ export const SettingsForm = ({ initialData }: SettingFormProps) => {
           >Submit</Button>
         </form>
       </Form>
+      <Separator />
+      <ApiAlert
+        title="test"
+        description="test"
+      />
     </>
   )
 };
