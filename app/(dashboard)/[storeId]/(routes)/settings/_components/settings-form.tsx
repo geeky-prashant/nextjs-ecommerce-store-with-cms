@@ -134,8 +134,9 @@ export const SettingsForm = ({ initialData }: SettingFormProps) => {
       </Form>
       <Separator />
       <ApiAlert
-        title="test"
+        title=""
         description="test"
+        variant="public"
       />
     </>
   )
