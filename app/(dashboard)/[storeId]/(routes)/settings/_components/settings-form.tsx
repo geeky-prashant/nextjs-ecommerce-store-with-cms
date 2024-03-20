@@ -134,7 +134,7 @@ export const SettingsForm = ({ initialData }: SettingFormProps) => {
       </Form>
       <Separator />
       <ApiAlert
-        title=""
+        title="NEXT_PUBLIC_API_URL"
         description="test"
         variant="public"
       />
