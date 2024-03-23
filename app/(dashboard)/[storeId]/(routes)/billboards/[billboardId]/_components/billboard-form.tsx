@@ -69,7 +69,7 @@ export const BillboardForm = ({ initialData }: BillboardFormProps) => {
       await axios.patch(`/api/stores/${params.storeId}`, data);
 
       router.refresh();
-      toast.success({ toastMessage })
+      toast.success("Success")
     } catch (error) {
       toast.error("Something went wrong");
     } finally {
