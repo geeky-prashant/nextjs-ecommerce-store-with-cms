@@ -22,7 +22,6 @@ import { useState } from "react";
 import toast from "react-hot-toast";
 import { useParams, useRouter } from "next/navigation";
 import { AlertModal } from "@/components/modals/alert-modal";
-import ApiAlert from "@/components/api-alert";
 import { useOrigin } from "@/hooks/use-origin";
 import { Billboard } from "@prisma/client";
 import ImageUpload from "@/components/image-upload";
@@ -45,7 +44,6 @@ type BillboardFormValues = z.infer<typeof formSchema>
 export const BillboardForm = ({ initialData }: BillboardFormProps) => {
   const params = useParams();
   const router = useRouter();
-  const origin = useOrigin();
 
   const title = initialData ? "Edit billboard" : "Create billboard";
   const description = initialData ? "Edit a billboard" : "Add a new billboard";
@@ -74,6 +72,7 @@ export const BillboardForm = ({ initialData }: BillboardFormProps) => {
       }
 
       router.refresh();
+      router.push(`/${params.storeId}/billboards`);
       toast.success(toastMessage)
     } catch (error) {
       toast.error("Something went wrong");
